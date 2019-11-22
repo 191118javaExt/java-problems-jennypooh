@@ -1,4 +1,4 @@
-package com.revature.eval.java.core;
+ package com.revature.eval.java.core;
 
 import java.time.temporal.Temporal;
 import java.util.List;
@@ -13,10 +13,17 @@ public class EvaluationService {
 	 * @param string
 	 * @return
 	 */
-	public String reverse(String string) {
-		
-		return "";
+	public static String reverse(String Revature) {
+	    char[] newWord = new char[Revature.length()];
+	    for (int i = 0, j = Revature.length() - 1; i < Revature.length(); i++, j--) {
+	        newWord[j] = Revature.charAt(i);
+	    }
+	    return new String(newWord);
+	
+	
 	}
+	    
+	
 
 	/**
 	 * 2. Convert a phrase to its acronym. Techies love their TLA (Three Letter
