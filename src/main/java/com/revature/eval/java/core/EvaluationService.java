@@ -397,7 +397,17 @@ public class EvaluationService {
 	 */
 	public List<Long> calculatePrimeFactorsOf(long l) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		List<Long> arr = new ArrayList<Long>();
+		while(1 % 2 == 0) {
+			1 /=2;
+			arr.add(2L);
+			1 /= I;
+		}
+	}
+	if(l > 1) {
+		arr.add(l);
+	}
+	return arr;
 	}
 
 	/**
