@@ -238,7 +238,27 @@ public class EvaluationService {
 	 */
 	public Map<String, Integer> wordCount(String string) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		String[] arr;
+		if (string.contains("\n")) {
+			arr = string.split(",\\n");
+		} else if (string.contains(",")) {
+			arr  = string.split(",");
+		} else { 
+			arr = string.split(" ");
+		}
+		
+		Map<String, Integer> map = new HashMap<>();
+		for(int i = 0; i < arr.length; i++) {
+			Integer count = map.get(arr[i]);
+			if (count == null) {
+				map.put(arr[i], 1);
+			} else {
+				map.put(arr[i], ++count);
+			}
+		}
+		
+		
+		return map;
 	}
 
 	/**
@@ -318,7 +338,31 @@ public class EvaluationService {
 	 */
 	public String toPigLatin(String string) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		String [] stringone = string.split(" ");
+		
+		for(int i = 0; i < stringone.length; i++) {
+			StringBuilder strB = new StringBuilder(stringone[i]);
+			while(strB).charAt(0) != 'a' && strB.charAt(0) != 'e' 
+					&& strB.charAt(0) != 'i' && strB.charAt(0) != 'o' 
+					&& strB.charAt(0) != 'u') {
+						if(strB.charAt(0) == 'q') {
+								strB.append("qu");
+								strB.delete(0,2);
+						}
+						else {
+							strB.append("ay");
+							stringone[i] = strB.toString();
+						   }
+						}
+					}
+		StringBuilder newArr  = new StringBuilder(stringone[0]);
+		for(int i = 1; i < stringone.length; i++) {
+			newArr.append((" ");
+			newArr.append(stringone[i]);
+			}
+		String translation = new String(newArr);
+		System.out.println(pigLatinTranslation);
+		return pigLatinTranslation;
 	}
 
 	/**
