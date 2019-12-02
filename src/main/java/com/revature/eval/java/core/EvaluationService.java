@@ -89,16 +89,29 @@ public class EvaluationService {
 
 		public boolean isEquilateral() {
 			// TODO Write an implementation for this method declaration
+			if (sideOne == sideTwo && sideOne == sideThree) {
+				         return true;
+			} else if (sideTwo == sideThree && sideTwo != sideOne) {
+				return true;
+			} else {
 			return false;
 		}
-
+		}
 		public boolean isIsosceles() {
 			// TODO Write an implementation for this method declaration
-			return false;
+			if (isIsosceles() != true && isEquilateral() != true) {
+				return true;
+			} else {
+				return false;
+			}
 		}
 
 		public boolean isScalene() {
 			// TODO Write an implementation for this method declaration
+			if (isIsosceles() != true && isEquilateral() != true) {
+				return true;
+			} else {
+			
 			return false;
 		}
 
@@ -121,6 +134,60 @@ public class EvaluationService {
 	 */
 	public int getScrabbleScore(String string) {
 		// TODO Write an implementation for this method declaration
+		char[] onePoint = { 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S','T' };
+		char[] twoPoint = { 'D', 'G' };
+		char[] threePoint = {'B', 'C', 'M', 'P'};
+		char[] fourPoint = {'F', 'H', 'V', 'W', 'Y'};
+		char[] fivePoint = {'K'};
+		char[] eightPoint = {'J', 'X'};
+		char[] tenPoint = {'Q', 'Z'};
+		
+		int score = 0;
+		string = string.toUpperCase();
+		
+		for(int i = 0; i < string.length(); i++) {
+		for (int x = 0; x < onePoint.length; x++) {
+			if(string.charAt(i) == onePoint[x]) {
+				score ++;
+			}
+		}
+		for (int x = 0; x < twoPoint.length; x++) {
+			if(string.charAt(i) == twoPoint[x]) {
+				score +=2;
+			}
+		}
+		
+		for (int x = 0; x < threePoint.length; x++) {
+			if(string.charAt(i) == threePoint[x]) {
+				score +=3;
+			}
+		}
+		
+		for (int x = 0; x < fourPoint.length; x++) {
+			if(string.charAt(i) == threePoint[x]) {
+				score +=3;
+			}
+		}
+		
+		for (int x = 0; x < fourPoint.length; x++) {
+			if(string.charAt(i) == fourPoint[x]) {
+				score +=4;
+			}
+		}
+		
+		for (int x = 0; x < fivePoint.length; x++) {
+			if(string.charAt(i) == fivePoint[x]) {
+				score +=8;
+			}
+		}
+		
+		for (int x = 0; x < tenPoint.length; x++) {
+			if(string.charAt(i) == tenPoint[x]) {
+				score +=10;
+			}
+		}
+			}
+		
 		return 0;
 	}
 
